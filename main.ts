@@ -1,5 +1,6 @@
 input.onButtonPressed(Button.A, function () {
     if (dot.get(LedSpriteProperty.X) != 2) {
+        music.playSoundEffect(music.builtinSoundEffect(soundExpression.sad), SoundExpressionPlayMode.InBackground)
         game.gameOver()
     }
     if (dot.get(LedSpriteProperty.Y) == 4) {
@@ -24,6 +25,7 @@ input.onButtonPressed(Button.A, function () {
         music.playTone(349, music.beat(BeatFraction.Whole))
     } else if (dot.get(LedSpriteProperty.Y) == 0) {
         basic.showIcon(IconNames.Happy)
+        music.playSoundEffect(music.builtinSoundEffect(soundExpression.happy), SoundExpressionPlayMode.InBackground)
         basic.showString("You won!")
         game.addScore(1)
         dot.delete()
